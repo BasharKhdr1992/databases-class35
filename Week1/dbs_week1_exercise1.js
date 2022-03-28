@@ -2,7 +2,7 @@ var mysql = require('mysql');
 
 var connection = mysql.createConnection({
   host: 'localhost',
-  user: 'root',
+  user: 'hyfuser',
   password: 'P@ssw0rd',
   database: 'meetup'
 });
@@ -35,30 +35,30 @@ var create_meeting_query = 'Create table IF NOT Exists Meeting (\
     room_no bigint \
 );';
 
-connection.query('DROP TABLE IF EXISTS Invitee;', (err, result, fields) => {
+connection.query('DROP TABLE IF EXISTS Invitee;', (err, _) => {
   if (err) {
-
+    console.log(err);
   } else {
     console.log('table Invitee dropped successfully');
   }
 });
-connection.query('DROP TABLE IF EXISTS Room;', (err, result, fields) => {
+connection.query('DROP TABLE IF EXISTS Room;', (err, _) => {
   if (err) {
-
+    console.log(err);
   } else {
     console.log('table Room dropped successfully');
   }
 });
-connection.query('DROP TABLE IF EXISTS Meeting;', (err, result, fields) => {
+connection.query('DROP TABLE IF EXISTS Meeting;', (err, _) => {
   if (err) {
-
+    console.log(err);
   } else {
     console.log('table Meeting dropped successfully');
   }
 });
 
 // create Invitee table
-connection.query(create_invitee_query, (err, result, fields) => {
+connection.query(create_invitee_query, (err, _) => {
   if (err) {
     console.error(err);
   } else {
@@ -67,7 +67,7 @@ connection.query(create_invitee_query, (err, result, fields) => {
 });
 
 // create Room table
-connection.query(create_room_query, (err, result, fields) => {
+connection.query(create_room_query, (err, _) => {
   if (err) {
     console.error(err);
   } else {
@@ -76,7 +76,7 @@ connection.query(create_room_query, (err, result, fields) => {
 });
 
 // create Meet table
-connection.query(create_meeting_query, (err, result, fields) => {
+connection.query(create_meeting_query, (err, _) => {
   if (err) {
     console.error(err);
   } else {
@@ -96,11 +96,11 @@ for (var i = 0; i < invitee_data.length; i++) {
 
   insert_query = 'INSERT INTO Invitee (invitee_name, invited_by) \
   VALUES ('+invitee_data[i]['invitee_name'] + ',' + invitee_data[i]['invited_by'] + ')';
-  connection.query(insert_query, (err, result, fields) => {
+  connection.query(insert_query, (err, result) => {
     if (err) {
       console.error(err);
     } else {
-      console.log('Row with id = '+result['insertId']);
+      console.log('Row with id = '+result['insertId']+' inserted successfully!');
     }
   })
 }
@@ -115,14 +115,14 @@ var room_table = [
   {'room_name': "'Computer Room'", 'floor_number': 2}
 ];
 
-for (var i=0; i < room_table.length; i++) {
+for (var i = 0; i < room_table.length; i++) {
   insert_query = 'INSERT INTO Room (room_name, floor_number) \
   VALUES ('+room_table[i]['room_name'] + ',' + room_table[i]['floor_number'] + ')';
-  connection.query(insert_query, (err, result, fields) => {
+  connection.query(insert_query, (err, result) => {
     if (err) {
       console.error(err);
     } else {
-      console.log('Row with id = '+result['insertId']);
+      console.log('Row with id = '+result['insertId']+' inserted successfully');
     }
   })
 }
@@ -157,13 +157,15 @@ var meeting_data=[
 ];
 
 for (var i = 0; i < meeting_data.length; i++) {
-  insert_query = 'INSERT INTO Meeting (meeting_title, starting_date, ending_date, room_no) \
-  VALUES ('+meeting_data[i]['meeting_title'] + ',' + meeting_data[i]['starting_date'] +','+meeting_data[i]['ending_date']+','+meeting_data[i]['room_no']+')';
-  connection.query(insert_query, (err, result, fields) => {
+  insert_query = 'INSERT INTO Meeting (meeting_title, starting_date, ending_date,\
+  room_no) VALUES ('+meeting_data[i]['meeting_title'] + ',' +
+  meeting_data[i]['starting_date'] +','+meeting_data[i]['ending_date']+','+
+  meeting_data[i]['room_no']+')';
+  connection.query(insert_query, (err, result) => {
     if (err) {
       console.error(err);
     } else {
-      console.log('Row with id = '+result['insertId']);
+      console.log('Row with id = '+result['insertId']+ ' inserted successfully!');
     }
   })
 }
