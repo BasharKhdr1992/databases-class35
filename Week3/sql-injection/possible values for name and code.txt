@@ -1,0 +1,1 @@
+`SELECT Population FROM ${Country} WHERE Name = 'roo' OR '1=1' and code = 'oor' OR '1=1'`
