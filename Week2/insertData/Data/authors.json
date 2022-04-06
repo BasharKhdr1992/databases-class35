@@ -1,6 +1,6 @@
 [
 	{
-		"author_no":1,
+		"author_id":1,
 		"author_name": "author1",
 		"university":"Amsterdam",
 		"date_of_birth":"1980-10-01",
@@ -8,7 +8,7 @@
 		"gender":"male"
 	},
 	{
-		"author_no":2,
+		"author_id":2,
 		"author_name": "author2",
 		"university":"Utrecht",
 		"date_of_birth":"1981-08-01",
@@ -16,7 +16,7 @@
 		"gender":"female"
 	},
 	{
-		"author_no":3,
+		"author_id":3,
 		"author_name": "author3",
 		"university":"Rotterdam",
 		"date_of_birth":"2000-02-01",
@@ -24,7 +24,7 @@
 		"gender":"male"
 	},
 	{
-		"author_no":4,
+		"author_id":4,
 		"author_name": "author4",
 		"university":"Amsterdam",
 		"date_of_birth":"1995-03-11",
@@ -32,7 +32,7 @@
 		"gender":"female"
 	},
 	{
-		"author_no":5,
+		"author_id":5,
 		"author_name": "author5",
 		"university":"Manchester",
 		"date_of_birth":"1992-06-06",
@@ -40,7 +40,7 @@
 		"gender":"male"
 	},
 	{
-		"author_no":6,
+		"author_id":6,
 		"author_name": "author6",
 		"university":"Liverpool",
 		"date_of_birth":"1991-01-01",
@@ -48,7 +48,7 @@
 		"gender":"male"
 	},
 	{
-		"author_no":7,
+		"author_id":7,
 		"author_name": "author7",
 		"university":"Amsterdam",
 		"date_of_birth":"1990-05-01",
@@ -56,7 +56,7 @@
 		"gender":"female"
 	},
 	{
-		"author_no":8,
+		"author_id":8,
 		"author_name": "author8",
 		"university":"London Imperial College",
 		"date_of_birth":"1975-10-01",
@@ -64,7 +64,7 @@
 		"gender":"male"
 	},
 	{
-		"author_no":9,
+		"author_id":9,
 		"author_name": "author9",
 		"university":"Eindhoven",
 		"date_of_birth":"1995-08-22",
@@ -72,7 +72,7 @@
 		"gender":"male"
 	},
 	{
-		"author_no":10,
+		"author_id":10,
 		"author_name": "author10",
 		"university":"Gronigen",
 		"date_of_birth":"1998-11-25",
@@ -80,7 +80,7 @@
 		"gender":"male"
 	},
 	{
-		"author_no":11,
+		"author_id":11,
 		"author_name": "author11",
 		"university":"Twente",
 		"date_of_birth":"1995-11-23",
@@ -88,7 +88,7 @@
 		"gender":"male"
 	},
 	{
-		"author_no":12,
+		"author_id":12,
 		"author_name": "author12",
 		"university":"Amsterdam",
 		"date_of_birth":"1999-12-20",
@@ -96,7 +96,7 @@
 		"gender":"male"
 	},
 	{
-		"author_no":13,
+		"author_id":13,
 		"author_name": "author13",
 		"university":"Eindhoven",
 		"date_of_birth":"1985-09-15",
@@ -104,7 +104,7 @@
 		"gender":"female"
 	},
 	{
-		"author_no":14,
+		"author_id":14,
 		"author_name": "author14",
 		"university":"Gronigen",
 		"date_of_birth":"1986-09-11",
@@ -112,7 +112,7 @@
 		"gender":"male"
 	},
 	{
-		"author_no":15,
+		"author_id":15,
 		"author_name": "author15",
 		"university":"Gronigen",
 		"date_of_birth":"1987-10-01",

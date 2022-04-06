@@ -1,20 +1,18 @@
 const {execQuery, connection} = require('./utils');
 
-const create_research_papers_table = 'create table if not exists research_papers (\
-	paper_id int not null auto_increment,\
-    paper_title varchar(200) not null,\
-    conference varchar(200),\
-    publish_date varchar (50) not null,\
-    primary key (paper_id)\
-);';
+const create_research_papers_table = `CREATE TABLE IF NOT EXISTS research_papers (
+	paper_id INT NOT NULL AUTO_INCREMENT,
+  paper_title VARCHAR(200) NOT NULL,
+  conference VARCHAR(200),
+  publish_date DATE NOT NULL,
+  PRIMARY KEY (paper_id));`;
 
-const create_author_papers_table = 'create table if not exists author_papers (\
-	  paper_id int not null,\
-    author_no int not null,\
-    primary key (paper_id, author_no),\
-    foreign key (paper_id) references research_papers(paper_id),\
-    foreign key (author_no) references authors(author_no)\
-);';
+const create_author_papers_table = `CREATE TABLE IF NOT EXISTS author_papers (
+	  paper_id INT NOT NULL,
+    author_id INT NOT NULL,
+    PRIMARY KEY (paper_id, author_id),
+    FOREIGN KEY (paper_id) REFERENCES research_papers(paper_id),
+    FOREIGN KEY (author_id) REFERENCES authors(author_id));`;
 
 executeQueries();
 

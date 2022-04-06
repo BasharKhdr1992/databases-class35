@@ -14,7 +14,7 @@ async function update_mentors() {
     );
 
     const promises = mentors.map(mentor => execQuery(
-      'UPDATE authors SET mentor = ? WHERE author_no = ?;',[mentor['mentor'],mentor['author_no']]
+      'UPDATE authors SET mentor = ? WHERE author_id = ?;',[mentor['mentor'],mentor['author_id']]
     ));
 
     await Promise.all(promises);

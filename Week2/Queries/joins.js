@@ -7,11 +7,15 @@ executeQueries();
 
 async function executeQueries() {
   try {
-    const rows1 = await execQuery('select a.author_name as author, m.author_name as mentor from authors a join authors m on a.mentor = m.author_no;')
-    const rows2 = await execQuery('select authors.*, research_papers.paper_title \
-    from authors \
-    left join author_papers on authors.author_no = author_papers.author_no \
-    left join research_papers on author_papers.paper_id = research_papers.paper_id')
+    const rows1 = await execQuery(`SELECT a.author_name AS author, m.author_name AS mentor
+    FROM authors a
+    JOIN authors m
+    ON a.mentor = m.author_id;`)
+    const rows2 = await execQuery(`SELECT authors.*, research_papers.paper_title
+    FROM authors
+    LEFT JOIN author_papers ON authors.author_id = author_papers.author_id
+    LEFT JOIN research_papers ON author_papers.paper_id = research_papers.paper_id`);
+
     console.log('author     mentor\n');
     rows1.forEach(row => {
       console.log(row['author'] +"    "+row['mentor']+'\n');
